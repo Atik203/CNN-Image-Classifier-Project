@@ -55,11 +55,11 @@ Classifier pipeline:
 - Full validation size: `10861`
 - Logged test accuracy: `1.0`
 
-Important: the notebook currently trains and evaluates on a small subset (`100` train and `100` val images) for quick testing:
+Important: the notebook currently trains and evaluates on a subset (`10000` train and `10000` val images):
 
 ```python
-train_dataset = Subset(train_dataset_full, list(range(min(100, len(train_dataset_full)))))
-test_dataset = Subset(test_dataset_full, list(range(min(100, len(test_dataset_full)))))
+train_dataset = Subset(train_dataset_full, list(range(min(10000, len(train_dataset_full)))))
+test_dataset = Subset(test_dataset_full, list(range(min(10000, len(test_dataset_full)))))
 ```
 
 Because of this, the reported accuracy is not a realistic measure of full-dataset performance.
@@ -81,7 +81,7 @@ Because of this, the reported accuracy is not a realistic measure of full-datase
 
 ## Suggested Next Improvements
 
-- Train on the full train/val split instead of the 100-image subset.
+- Train on the full train/val split instead of the 10,000-image subset.
 - Add train/validation loss and accuracy plots.
 - Save and load model checkpoints (`.pth`).
 - Add single-image prediction/inference function.
